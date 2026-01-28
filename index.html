@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Refinance Path - Lower Your Monthly Payments</title>
+    <link rel="icon" type="image/png" href="applogo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <!-- Default header logo -->
+                    <img src="secondarylogo.png" alt="Your Refinance Path" class="logo-img logo-img-default">
+                    <!-- Logo when header is scrolled -->
+                    <img src="financepath.png" alt="Your Refinance Path" class="logo-img logo-img-scrolled">
+                </div>
+                <nav class="nav">
+                    <a href="#services">Services</a>
+                    <a href="#about">About</a>
+                    <a href="#team">Team</a>
+                    <a href="#faq">FAQ</a>
+                    <a class="nav-cta" href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-image"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="badge badge-outline">Top rated</div>
+                    <h2 class="hero-title">
+                        Refinance guidance that helps you
+                        <span class="highlight">save more every month</span>
+                    </h2>
+                    <p class="hero-subtitle">Take the 60-second savings quiz and get matched with refinance options designed around your goals.</p>
+                    <div class="hero-actions">
+                        <a class="btn-primary" href="#savingsForm">
+                            <span>See Savings</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a class="btn-secondary" href="#services">Our Services</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">$300+</div>
+                            <div class="stat-label">Average Monthly Savings</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">2.5%</div>
+                            <div class="stat-label">Starting Rates Available</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">60s</div>
+                            <div class="stat-label">Quick Qualification</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-form">
+                    <div class="form-card">
+                        <h3>Calculate Your Savings</h3>
+                        <form id="savingsForm" class="savings-form">
+                            <div class="form-group">
+                                <label for="zipCode">ZIP Code</label>
+                                <input type="text" id="zipCode" name="zipCode" placeholder="Enter your ZIP code" required pattern="[0-9]{5}">
+                                <span class="error-message" id="zipError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="loanAmount">Current Loan Amount</label>
+                                <div class="input-wrapper">
+                                    <span class="currency">$</span>
+                                    <input type="number" id="loanAmount" name="loanAmount" placeholder="250,000" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="currentRate">Current Interest Rate (%)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" id="currentRate" name="currentRate" placeholder="4.5" step="0.01" required>
+                                    <span class="percent">%</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="creditScore">Credit Score Range</label>
+                                <select id="creditScore" name="creditScore" required>
+                                    <option value="">Select range</option>
+                                    <option value="excellent">750+ (Excellent)</option>
+                                    <option value="good">700-749 (Good)</option>
+                                    <option value="fair">650-699 (Fair)</option>
+                                    <option value="below">Below 650</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-primary">
+                                <span>See My Savings</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <p class="form-disclaimer">* No obligation. Free quote in minutes.</p>
+                            <p style="text-align: center;" id="savingsSuccess" class="form-success" aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Image Strip (Koddam-style) -->
+    <section class="image-strip" aria-label="Featured imagery">
+        <div class="image-strip-track">
+            <div class="image-strip-item" style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="image-strip-item" style="background-image:url('https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="image-strip-item" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="image-strip-item" style="background-image:url('https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="image-strip-item" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80');"></div>
+            <!-- duplicate for seamless marquee -->
+            <div class="image-strip-item" style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="image-strip-item" style="background-image:url('https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="image-strip-item" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="image-strip-item" style="background-image:url('https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="image-strip-item" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80');"></div>
+        </div>
+    </section>
+
+    <!-- Trusted -->
+    <section class="trusted">
+        <div class="container">
+            <div class="trusted-row">
+                <p class="trusted-label">Trusted by homeowners nationwide</p>
+                <div class="trusted-logos" aria-label="Trusted companies">
+                    <span class="trusted-pill">
+                        <svg class="mini-ico" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 5 3 9.5 8 10 5-.5 8-5 8-10V6l-8-4Z" stroke="currentColor" stroke-width="2"/><path d="M8.5 12l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Fast Quotes
+                    </span>
+                    <span class="trusted-pill">
+                        <svg class="mini-ico" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17 8c0-1.66-2.24-3-5-3s-5 1.34-5 3 2.24 3 5 3 5 1.34 5 3-2.24 3-5 3-5-1.34-5-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        Rate Match
+                    </span>
+                    <span class="trusted-pill">
+                        <svg class="mini-ico" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 11V8a5 5 0 0 1 10 0v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6 11h12v10H6V11Z" stroke="currentColor" stroke-width="2"/></svg>
+                        Secure Forms
+                    </span>
+                    <span class="trusted-pill">
+                        <svg class="mini-ico" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 4v6c0 5-3 9.5-7 10-4-.5-7-5-7-10V6l7-4Z" stroke="currentColor" stroke-width="2"/><path d="M12 7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 17h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+                        Licensed Partners
+                    </span>
+                    <span class="trusted-pill">
+                        <svg class="mini-ico" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 7l-8 8-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        Real Savings
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services (Koddam-style cards) -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header section-header-left">
+                <div class="kicker">Our Services</div>
+                <h2>Refinance support for every goal</h2>
+                <p>From lowering payments to tapping equity, we help you compare options with clarity and confidence.</p>
+            </div>
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-media" style="background-image:url('https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80');"></div>
+                    <div class="service-body">
+                        <div class="service-kicker">
+                            <svg class="mini-ico" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h4l3 8 4-16 3 8h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Rate Optimization
+                        </div>
+                        <h3>Lower your payment</h3>
+                        <p>Explore competitive offers to reduce monthly costs and improve cash flow.</p>
+                        <a class="service-link" href="#savingsForm">More details</a>
+                    </div>
+                </article>
+                <article class="service-card">
+                    <div class="service-media" style="background-image:url('https://assets.smfgindiacredit.com/sites/default/files/Post-Debt-Consolidation-Thumb.png?VersionId=b4AdLdb0khMCnDUeH.n2e4kOxzmfrCi1');"></div>
+                    <div class="service-body">
+                        <div class="service-kicker">
+                            <svg class="mini-ico" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 21h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 21V7l5-4 5 4v14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9.5 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                            Equity Strategy
+                        </div>
+                        <h3>Debt consolidation</h3>
+                        <p>Use home equity to simplify payments and potentially lower overall interest.</p>
+                        <a class="service-link" href="#savingsForm">More details</a>
+                    </div>
+                </article>
+                <article class="service-card">
+                    <div class="service-media" style="background-image:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80');"></div>
+                    <div class="service-body">
+                        <div class="service-kicker">
+                            <svg class="mini-ico" width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                            Term Planning
+                        </div>
+                        <h3>Pay off faster</h3>
+                        <p>Consider 15- or 20-year options without a dramatic payment increase.</p>
+                        <a class="service-link" href="#savingsForm">More details</a>
+                    </div>
+                </article>
+                <article class="service-card">
+                    <div class="service-media" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80');"></div>
+                    <div class="service-body">
+                        <div class="service-kicker">
+                            <svg class="mini-ico" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 4v6c0 5-3 9.5-7 10-4-.5-7-5-7-10V6l7-4Z" stroke="currentColor" stroke-width="2"/><path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Fixed Stability
+                        </div>
+                        <h3>Lock in low rates</h3>
+                        <p>Secure predictable payments with fixed-rate refinance options.</p>
+                        <a class="service-link" href="#savingsForm">More details</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-media" style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=80');"></div>
+                <div class="about-content">
+                    <div class="kicker">About Us</div>
+                    <h2>More than quotes — guidance you can trust</h2>
+                    <p>We connect homeowners with refinance providers and support the decision-making process with clear comparisons, transparent next steps, and a client-first approach.</p>
+                    <div class="values">
+                        <div class="value">
+                            <div class="value-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="value-content">
+                                <h4>Expertise</h4>
+                                <p>Deep market awareness and practical mortgage insights.</p>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <div class="value-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2l7 4v6c0 5-3 9.5-7 10-4-.5-7-5-7-10V6l7-4z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="value-content">
+                                <h4>Integrity</h4>
+                                <p>Clear disclosures and no-pressure guidance at every step.</p>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <div class="value-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="value-content">
+                                <h4>Partnership</h4>
+                                <p>We focus on outcomes that fit your life and timeline.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>
+
+    <!-- Impact -->
+    <section class="impact">
+        <div class="container">
+            <div class="impact-grid">
+                <div class="impact-left">
+                    <div class="kicker">Our Business Impact</div>
+                    <h2>Results that speak for themselves</h2>
+                    <p>We’ve helped homeowners compare offers and move forward with confidence.</p>
+                </div>
+                <div class="impact-cards">
+                    <div class="impact-card">
+                        <div class="impact-number">10k+</div>
+                        <div class="impact-label">Quotes delivered</div>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-number">$1M+</div>
+                        <div class="impact-label">Estimated annual savings</div>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-number">4.9/5</div>
+                        <div class="impact-label">Customer satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Refinance Your Mortgage?</h2>
+                <p>These are just a few of the benefits of refinancing your mortgage</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 4L6 14V24C6 32.5 10.5 40.5 18 44.5C20.5 45.5 23 46 24 46C25 46 27.5 45.5 30 44.5C37.5 40.5 42 32.5 42 24V14L24 4Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M18 24L22 28L30 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Lower Your Payment</h3>
+                    <p>Today's rates may be much lower than your current rate. That's why we put together customized quotes for each of our clients.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="8" y="12" width="32" height="28" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M8 20H40" stroke="currentColor" stroke-width="2"/>
+                            <path d="M16 28H24" stroke="currentColor" stroke-width="2"/>
+                            <path d="M16 36H32" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Use Your Home Equity</h3>
+                    <p>Consolidate car payments or credit card debt into your mortgage at lower rates. Let the equity in your home help you live a stress-free life.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+                            <path d="M24 12V24L30 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Pay Off Your Loan Faster</h3>
+                    <p>With lower rates you may be able to switch to a 20 or 15 year term without a major payment increase. That means you can pay off your home much faster.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 4L6 14V24C6 32.5 10.5 40.5 18 44.5C20.5 45.5 23 46 24 46C25 46 27.5 45.5 30 44.5C37.5 40.5 42 32.5 42 24V14L24 4Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M24 18V30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M18 24H30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Lock In Low Rates</h3>
+                    <p>Lock in a 30-year fixed rate at all-time lows. Rest assured your rate will not increase for the life of your mortgage loan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Get started in three simple steps</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Complete the Form</h3>
+                    <p>Answer a few quick questions about your current mortgage and financial situation.</p>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Get Matched</h3>
+                    <p>We'll connect you with qualified lenders who can offer competitive refinance rates.</p>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Save Money</h3>
+                    <p>Compare offers and choose the best refinance option to lower your monthly payments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Expert Team</h2>
+                <p>Dedicated professionals committed to helping you achieve your financial goals</p>
+            </div>
+            <div class="team-carousel-wrapper">
+                <div class="team-carousel" id="teamCarousel">
+                    <div class="team-card team-card-photo" style="--team-bg:url('Chandrakant Maurya.png');">
+                        <div class="team-overlay">
+                            <h3>Chandrakant Maurya</h3>
+                            <p class="team-role">Senior Mortgage Advisor</p>
+                        </div>
+                    </div>
+                    <div class="team-card team-card-photo" style="--team-bg:url('Harsh Gupta.png');">
+                        <div class="team-overlay">
+                            <h3>Harsh Gupta</h3>
+                            <p class="team-role">Financial Strategist</p>
+                        </div>
+                    </div>
+                    <div class="team-card team-card-photo" style="--team-bg:url('Aditya Gupta.png');">
+                        <div class="team-overlay">
+                            <h3>Aditya Gupta</h3>
+                            <p class="team-role">Loan Specialist</p>
+                        </div>
+                    </div>
+                    <div class="team-card team-card-photo" style="--team-bg:url('Abhay Singh.png');">
+                        <div class="team-overlay">
+                            <h3>Abhay Singh</h3>
+                            <p class="team-role">Customer Success Manager</p>
+                        </div>
+                    </div>
+                    <div class="team-card team-card-photo" style="--team-bg:url('Aman Prajapati.png');">
+                        <div class="team-overlay">
+                            <h3>Aman Prajapati</h3>
+                            <p class="team-role">Rate Analyst</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-prev" id="prevBtn" aria-label="Previous">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="carousel-btn carousel-next" id="nextBtn" aria-label="Next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (Koddam-style) -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header section-header-left">
+                <div class="kicker">Testimonials</div>
+                <h2>What homeowners say</h2>
+                <p>Real words from people who used our refinance matching experience.</p>
+            </div>
+            <div class="testimonials-grid">
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="testimonial-quote">“The quiz was quick and the options were easy to compare. We lowered our monthly payment and it felt effortless.”</p>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-avatar" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80');"></div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">David Collins</div>
+                            <div class="testimonial-role">Homeowner</div>
+                        </div>
+                    </div>
+                </article>
+                <article class="testimonial-card">
+                    <p class="testimonial-quote">“Clear steps, no pressure. We found a rate that made sense and locked it in fast.”</p>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-avatar" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80');"></div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Laura Mitchell</div>
+                            <div class="testimonial-role">Homeowner</div>
+                        </div>
+                    </div>
+                </article>
+                <article class="testimonial-card">
+                    <p class="testimonial-quote">“I wanted to consolidate debt and the guidance helped me understand what to expect before I talked to anyone.”</p>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-avatar" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80');"></div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Anita Sharma</div>
+                            <div class="testimonial-role">Homeowner</div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header section-header-left">
+                <div class="kicker">FAQ</div>
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common refinance questions.</p>
+            </div>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>How fast is the quiz?</summary>
+                    <p>Most people finish in about 60 seconds. It’s designed to be quick and easy.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Does this cost anything?</summary>
+                    <p>Our basic matching is free. You’re never obligated to choose an offer.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Will my rate change after I submit?</summary>
+                    <p>Rates can change daily. Providers confirm final terms after verifying details.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Is my information secure?</summary>
+                    <p>We use secure form handling and share details only with relevant providers.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-card">
+                <div class="contact-left">
+                    <div class="kicker">Get in Touch</div>
+                    <h2>Partner with experts who understand your goals</h2>
+                    <p>Share a few details and we’ll guide you to the next best step.</p>
+                </div>
+                <form class="contact-form">
+                    <div class="contact-grid">
+                        <div class="form-group">
+                            <label for="contactName">Full Name</label>
+                            <input id="contactName" type="text" placeholder="Jane Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input id="contactEmail" type="email" placeholder="jane@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone">Phone</label>
+                            <input id="contactPhone" type="tel" placeholder="(555) 555-5555">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactZip">ZIP Code</label>
+                            <input id="contactZip" type="text" placeholder="90210" pattern="[0-9]{5}">
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="contactMsg">Message</label>
+                            <input id="contactMsg" type="text" placeholder="Tell us what you want to achieve (lower payment, cash-out, term change...)">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary btn-block">
+                        <span>Contact Us</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <p class="form-disclaimer">By submitting, you agree to be contacted about refinance options. No obligation.</p>
+                    <p style="text-align: center;" id="contactSuccess" class="form-success" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Lower Your Monthly Payments?</h2>
+                <p>Join thousands of homeowners who have saved money by refinancing their mortgage.</p>
+                <a href="#savingsForm" class="btn-primary btn-large">
+                    <span>Calculate Your Savings Now</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">
+                    <img src="secondarylogo.png" alt="Your Refinance Path" />
+                </div>
+                <nav class="footer-links">
+                    <a href="#services">Services</a>
+                    <a href="#about">About</a>
+                    <a href="#team">Team</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <p class="footer-copy">&copy; 2026 Your Refinance Path. All rights reserved.</p>
+                <p class="disclaimer">Your Refinance Path provides marketing services for various companies involved in mortgage refinance. The information you provide is shared with qualified lenders. You are not charged for our services. Completing our forms does not obligate you to purchase any service or product.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Results Modal -->
+    <div id="resultsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h2>Your Potential Savings</h2>
+                <div class="savings-results">
+                    <div class="result-card">
+                        <div class="result-label">Monthly Savings</div>
+                        <div class="result-value" id="monthlySavings">$0</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Annual Savings</div>
+                        <div class="result-value" id="annualSavings">$0</div>
+                    </div>
+                    <div class="result-card highlight">
+                        <div class="result-label">30-Year Total Savings</div>
+                        <div class="result-value" id="totalSavings">$0</div>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-primary" onclick="closeModal()">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
